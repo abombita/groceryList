@@ -11,16 +11,17 @@
 
     <div>
     <ul id="itemList">
-        <% if (groceryList.length){for(let i = 0; i > groceryList.length; i ++){ console.log(results); %>
-        <li id="grocery-<%=groceryList[i].id%>">
-            <a href="/grocery/<%=groceryList[i].id%>"></a>><%=groceryList[i].name%></a>
-        </li>
-            <% } %>
-        <% } %>
         <li>item 1</li>
         <li>item 2</li>
         <li>item 3</li>
-        <li><form action="/" method="post"><input type="text" id="newItem" name="newItem"></form></li>
+        <% if (groceryList.length){
+            for(let i = 0; i < groceryList.length; i++){ %> 
+            <li id="grocery<%=groceryList[i].id%>"> 
+                <a href="/grocery/<%=groceryList[i].id%>"></a><%=groceryList[i].item%></a>
+            </li><% } %>
+            <% } %> 
+
+        <li><form action="/" method="post"><input type="text" id="grocery" name="grocery"></form></li>
     </ul>
     </div>
     
